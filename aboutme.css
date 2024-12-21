@@ -1,0 +1,264 @@
+/* Reset basic styles */
+* {
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    padding: 0px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color for dark theme */
+}
+
+body.dark-theme .theme-switcher-btn {
+    background-color: #bb86fc;
+    color: white;
+}
+
+
+body.dark-theme h1, body.dark-theme h2, body.dark-theme h3, body.dark-theme p, body.dark-theme li {
+    color: #e0e0e0; /* Light color text */
+}
+
+/* Project Titles in Dark Theme */
+body.dark-theme .project-card {
+    background-color: #333; /* Dark background for project cards */
+}
+
+body.dark-theme .project-card h3 {
+    color: #bb86fc; /* Light color for project title in dark theme */
+}
+
+/* Project Titles in Dark Theme */
+body.dark-theme .portfolio-card {
+    background-color: #333; /* Dark background for project cards */
+}
+
+body.dark-theme .portfolio-card h3 {
+    color: #bb86fc; /* Light color for project title in dark theme */
+}
+
+/* Light Theme Styles */
+body.light-theme {
+    background-color: #f4f4f4; /* Light background */
+    color: #333; /* Dark text color for light theme */
+}
+
+body.light-theme .theme-switcher-btn {
+    background-color: #333;
+    color: white;
+}
+
+body.light-theme h1, body.light-theme h2, body.light-theme h3, body.light-theme p, body.light-theme li {
+    color: #333; /* Dark color text */
+}
+
+/* Project Titles in Light Theme */
+body.light-theme .project-card {
+    background-color: #fff; /* Light background for project cards */
+}
+
+body.light-theme .project-card h3 {
+    color: #333; /* Dark color for project title in light theme */
+}
+
+body.light-theme .portfolio-card {
+    background-color: #fff; /* Light background for project cards */
+}
+
+body.light-theme .portfolio-card h3 {
+    color: #333; /* Dark color for project title in light theme */
+}
+
+/* Flexbox setup */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+}
+
+.left {
+    max-width: 400px;
+    text-align: center;
+}
+
+.left img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #444;
+}
+
+.left h1, .left h3 {
+    color: inherit; /* Inherit text color from theme */
+}
+
+.right {
+    flex: 2;
+}
+
+.right h2, .right h3 {
+    margin-bottom: 10px;
+    color: inherit; /* Inherit text color from theme */
+}
+
+.right p {
+    margin-bottom: 20px;
+    color: inherit; /* Inherit text color from theme */
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 8px;
+    color: inherit; /* Inherit text color from theme */
+}
+
+/* Project section styling */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s;
+}
+
+.project-card:hover {
+    background-color: #555; /* Slightly lighter on hover */
+}
+
+.project-card h3 {
+    margin-bottom: 10px;
+    color: inherit; /* Inherit text color from theme */
+}
+
+.project-card p {
+    color: #bbb;
+}
+
+/* Portfolio Section Styling */
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.portfolio-card {
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s;
+}
+
+.portfolio-card:hover {
+    background-color: #555; /* Slightly lighter on hover */
+}
+
+.portfolio-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.portfolio-card h3 {
+    margin-bottom: 10px;
+    color: inherit; /* Inherit text color from theme */
+}
+
+.portfolio-card p {
+    color: #bbb;
+}
+
+/* Navigation Bar Styling */
+.crumbs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+}
+
+.crumbs ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.crumb {
+    display: inline;
+}
+
+.crumb a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.crumb a:hover {
+    color: #bb86fc;
+}
+
+.crumb button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.crumb button:hover {
+    background-color: #6200ea;
+    color: white;
+}
+
+/* Button styling */
+.theme-switcher-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-switcher-btn:hover {
+    background-color: #6200ea;
+    color: white;
+}
+
+/* Ensure smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}

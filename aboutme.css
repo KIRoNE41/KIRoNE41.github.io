@@ -216,6 +216,13 @@ ul li {
     gap: 20px;
 }
 
+
+.crumbs .theme-switcher-btn{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
 .crumb {
     display: inline;
 }

@@ -1,6 +1,3 @@
-import * as tf from '@tensorflow/tfjs';
-import * as speechCommands from '@tensorflow-models/speech-commands';
-
 const URL = "https://teachablemachine.withgoogle.com/models/ClM8BVYcE/";
 
 let isInhale = true;
@@ -40,13 +37,17 @@ async function createModel() {
     console.log("Loading model...");
 
     // โหลด Speech Commands API แบบไดนามิก
-    const speech = await import("https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands");
+    await import("https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.4.0/dist/speech-commands.min.js");
 
-    // ตรวจสอบว่ามีฟังก์ชัน create หรือไม่
-    console.log("speechCommands.create:", speech.default.create);
+    if (!window.speechCommands) {
+        console.error("❌ speechCommands is not available!");
+        return;
+    }
 
-    // ตรวจสอบว่า URL ถูกกำหนดค่าหรือไม่
-    const URL = "https://teachablemachine.withgoogle.com/models/ClM8BVYcE/";  // เปลี่ยนเป็นลิงก์โมเดลของคุณ
+    // ตรวจสอบว่า create ฟังก์ชันพร้อมใช้งานหรือไม่
+    console.log("speechCommands.create:", window.speechCommands.create);
+
+    const URL = "https://teachablemachine.withgoogle.com/models/ClM8BVYcE/";// เปลี่ยนเป็นโมเดลของคุณ
 
     if (!URL) {
         console.error("❌ URL is not defined!");
@@ -54,13 +55,14 @@ async function createModel() {
     }
 
     // สร้างตัวจดจำเสียง
-    const recognizer = speech.default.create("BROWSER_FFT", undefined, URL + "model.json", URL + "metadata.json");
+    const recognizer = window.speechCommands.create("BROWSER_FFT", undefined, URL + "model.json", URL + "metadata.json");
 
     await recognizer.ensureModelLoaded();
     console.log("✅ Model loaded successfully!");
 
     return recognizer;
 }
+
 
 
 

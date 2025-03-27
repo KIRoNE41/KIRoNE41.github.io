@@ -1,4 +1,5 @@
-const URL = "https://KIRoNE41.github.io/model/";  // ใช้ GitHub Pages URL
+const URL = "https://b1e73e79.kirone41-github-io.pages.dev/model/";
+
 let isInhale = true;
 let indexs = 0;
 

@@ -43,8 +43,8 @@ async function createModel() {
 
     const recognizer = speechCommands.create("BROWSER_FFT", undefined, checkpointURL, metadataURL);
     await recognizer.ensureModelLoaded();
-    return recognizer;
     console.log("Installed Model");
+    return recognizer;
 }
 
 async function init() {

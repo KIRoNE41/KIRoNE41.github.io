@@ -34,6 +34,7 @@ function startLoop() {
 }
 
 async function createModel() {
+    console.log("Loading");
     const checkpointURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 

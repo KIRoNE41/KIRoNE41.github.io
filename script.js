@@ -32,20 +32,24 @@ function startLoop() {
     arrowloop();
     setInterval(arrowloop, arrowArray.length * 1000);
 }
-
 async function createModel() {
-    console.log("Loading");
-    const checkpointURL = URL + "model.json";
-    const metadataURL = URL + "metadata.json";
+    console.log("Loading model...");
 
-    //const checkpointURL = "https://raw.githubusercontent.com/KIRoNE41/KIRoNE41.github.io/refs/heads/main/model/model.json";
-    //const metadataURL = "https://raw.githubusercontent.com/KIRoNE41/KIRoNE41.github.io/refs/heads/main/model/metadata.json";
+    // โหลด Speech Commands API แบบไดนามิก
+    const speech = await import("https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands");
+    
+    // ตรวจสอบว่ามีฟังก์ชัน create หรือไม่
+    console.log("speechCommands.create:", speech.create);
 
-    const recognizer = speechCommands.create("BROWSER_FFT", undefined, checkpointURL, metadataURL);
+    // สร้างตัวจดจำเสียง
+    const recognizer = speech.create("BROWSER_FFT", undefined, URL + "model.json", URL + "metadata.json");
+
     await recognizer.ensureModelLoaded();
-    console.log("Installed Model");
+    console.log("Model loaded successfully!");
+    
     return recognizer;
 }
+
 
 async function init() {
     const recognizer = await createModel();

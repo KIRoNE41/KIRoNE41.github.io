@@ -1,4 +1,4 @@
-const URL = "https://b1e73e79.kirone41-github-io.pages.dev/model/";
+const URL = "https://teachablemachine.withgoogle.com/models/ClM8BVYcE/";
 
 let isInhale = true;
 let indexs = 0;

@@ -37,11 +37,11 @@ body {
     font-weight: bold;
     text-align: center;
 }
-
 .text-center {
     left: 50%;
     transform: translateX(-50%);
 }
+
 
 .arrows-leftSide {
     position: absolute;
@@ -79,6 +79,14 @@ body {
     font-size: 24px;
     color: white;
     margin: 5px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.arrow-t,.arrow-b {
+    font-size: 24px;
+    color: white;
+    margin:10px;
     opacity: 0;
     transition: opacity 0.5s;
 }

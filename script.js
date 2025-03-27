@@ -1,3 +1,6 @@
+import * as tf from '@tensorflow/tfjs';
+import * as speechCommands from '@tensorflow-models/speech-commands';
+
 const URL = "https://teachablemachine.withgoogle.com/models/ClM8BVYcE/";
 
 let isInhale = true;

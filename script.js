@@ -33,8 +33,11 @@ function startLoop() {
 }
 
 async function createModel() {
-    const checkpointURL = URL + "model.json";
-    const metadataURL = URL + "metadata.json";
+    //const checkpointURL = URL + "model.json";
+    //const metadataURL = URL + "metadata.json";
+
+    const checkpointURL = "https://raw.githubusercontent.com/KIRoNE41/KIRoNE41.github.io/refs/heads/main/model/model.json";
+    const metadataURL = "https://raw.githubusercontent.com/KIRoNE41/KIRoNE41.github.io/refs/heads/main/model/metadata.json";
 
     const recognizer = speechCommands.create("BROWSER_FFT", undefined, checkpointURL, metadataURL);
     await recognizer.ensureModelLoaded();

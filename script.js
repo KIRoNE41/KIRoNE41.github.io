@@ -35,23 +35,33 @@ function startLoop() {
     arrowloop();
     setInterval(arrowloop, arrowArray.length * 1000);
 }
+
 async function createModel() {
     console.log("Loading model...");
 
     // โหลด Speech Commands API แบบไดนามิก
     const speech = await import("https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands");
-    
+
     // ตรวจสอบว่ามีฟังก์ชัน create หรือไม่
-    console.log("speechCommands.create:", speech.create);
+    console.log("speechCommands.create:", speech.default.create);
+
+    // ตรวจสอบว่า URL ถูกกำหนดค่าหรือไม่
+    const URL = "https://teachablemachine.withgoogle.com/models/ClM8BVYcE/";  // เปลี่ยนเป็นลิงก์โมเดลของคุณ
+
+    if (!URL) {
+        console.error("❌ URL is not defined!");
+        return;
+    }
 
     // สร้างตัวจดจำเสียง
-    const recognizer = speech.create("BROWSER_FFT", undefined, URL + "model.json", URL + "metadata.json");
+    const recognizer = speech.default.create("BROWSER_FFT", undefined, URL + "model.json", URL + "metadata.json");
 
     await recognizer.ensureModelLoaded();
-    console.log("Model loaded successfully!");
-    
+    console.log("✅ Model loaded successfully!");
+
     return recognizer;
 }
+
 
 
 async function init() {

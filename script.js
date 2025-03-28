@@ -78,7 +78,7 @@ const arrows_l = document.querySelectorAll(".arrow-l");
             // loader.style.display = "none";
             loading.style.display = "none";
             container.style.display = "block";
-
+            startLoop();
             for (let i = 0; i < classLabels.length; i++) {
                 labelContainer.appendChild(document.createElement("div"));
             }

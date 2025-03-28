@@ -99,23 +99,23 @@ const arrows_l = document.querySelectorAll(".arrow-l");
                     squareText.style.color = "white"
                     if (result.scores[1] >= 0.7) {
                         square.style.backgroundColor = "red"; // Breathing out
-                        squareText.textContent = "Exhale Detect";
+                        squareText.textContent = "มีการหายใจออก";
 
                     } else if (result.scores[2] >= 0.7) {
                         square.style.backgroundColor = "green"; // Breathing in
-                        squareText.textContent = "Inhale Detect";
+                        squareText.textContent = "มีการหายใจเข้า";
 
                     }
                     else{
                         square.style.backgroundColor = "gray"; // Breathing out
-                        squareText.textContent = "Cannot Detect";
+                        squareText.textContent = "ไม่พบเจอ";
 
                     }
                 }
                 else{
                     square.style.backgroundColor = "orange"; // Breathing out
                     squareText.style.color = "black"
-                    squareText.textContent = "Hold!";
+                    squareText.textContent = "กลั้นหายใจไว้!";
 
                 }
 

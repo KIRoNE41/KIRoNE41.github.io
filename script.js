@@ -44,7 +44,7 @@ const arrows_l = document.querySelectorAll(".arrow-l");
         }
 
         init(); 
-        startLoop();
+        
         
         async function createModel() {
             const checkpointURL = URL + "model.json"; // model topology
@@ -62,9 +62,22 @@ const arrows_l = document.querySelectorAll(".arrow-l");
         }
 
         async function init() {
-            const recognizer = await createModel();
-            const classLabels = recognizer.wordLabels();
+
+            // const loader = document.getElementById('loader');
+            const loading = document.getElementById("loading");
             const labelContainer = document.getElementById("label-container");
+            const container = document.querySelector(".container");
+            // loader.style.display = "block";
+            loading.style.display = "block";
+            container.style.display = "none";
+
+
+            const recognizer = await createModel();
+            
+            const classLabels = recognizer.wordLabels();
+            // loader.style.display = "none";
+            loading.style.display = "none";
+            container.style.display = "block";
 
             for (let i = 0; i < classLabels.length; i++) {
                 labelContainer.appendChild(document.createElement("div"));

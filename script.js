@@ -12,7 +12,7 @@ const arrows_l = document.querySelectorAll(".arrow-l");
 
         // const URL = "https://teachablemachine.withgoogle.com/models/CWdZJLSFO/";
         // const URL = "https://teachablemachine.withgoogle.com/models/ClM8BVYcE/";
-        const URL = "https://teachablemachine.withgoogle.com/models/ClM8BVYcE/";
+        const URL = "https://teachablemachine.withgoogle.com/models/PhgtA24sE/";
         let isInhale = true;
         let indexs = 0;
         function arrowloop() {
